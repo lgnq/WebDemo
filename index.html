@@ -29,7 +29,7 @@
   </head>
   <body>
     <header class="header">
-      <h1>Adafruit 3D Model Viewer</h1>
+      <h1>A online DEMO using WEB serial API</h1>
     </header>
     <main class="main">
       <div id="notSupported" class="notSupported">
@@ -38,6 +38,7 @@
         <code>#enable-experimental-web-platform-features</code> flag in
         <code>chrome://flags</code>
       </div>
+
       <div id="webGLnotSupported" class="notSupported">
         Sorry, <b>WebGL</b> is not supported on this device.
       </div>
@@ -53,13 +54,16 @@
          </span>
         <input type="checkbox" id="darkmode"> Dark Mode
       </div>
+      
       <div class="animation-container">
         <canvas id="canvas"></canvas>
       </div>
+      
       <div id="log-container" class="row">
         <div id="log" class="log"></div>
         <div id="calibration" class="calibration-container"></div>
       </div>
+      
       <div class="controls">
         <input type="checkbox" id="autoscroll"> Autoscroll
         <input type="checkbox" id="showTimestamp"> Show Timestamp
