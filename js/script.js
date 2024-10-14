@@ -81,7 +81,7 @@ let trace_x = {
   name: 'X',
   // fill: 'tozeroy',
   line: {
-    // color: 'rgb(219, 64, 82)',
+    color: 'rgb(219, 64, 82)',
     width: 1
   }
 };
@@ -94,7 +94,7 @@ let trace_y = {
   mode: 'lines',
   name: 'Y',
   line: {
-    // color: 'rgb(55, 128, 191)',
+    color: 'rgb(55, 128, 191)',
     width: 1
   }
 };
@@ -107,7 +107,7 @@ let trace_z = {
   mode: 'lines',
   name: 'Z',
   line: {
-    // color: 'rgb(55, 128, 191)',
+    color: 'rgb(55, 128, 191)',
     width: 1
   }
 };
