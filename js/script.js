@@ -52,6 +52,28 @@ function fitToContainer(canvas){
   canvas.height = canvas.offsetHeight;
 }
 
+var config = {responsive: true}
+
+var layout_xyz = {
+  autosize: true,
+  // margin: { t: 5, b: 5, l: 5, r: 5 },
+
+  title: 'XYZ Plot',
+  
+  xaxis: {
+    title: 'time',
+    showgrid: false,
+    zeroline: false
+  },
+
+  yaxis: {
+    title: 'Magnetic Flux(uT)',
+    showline: false
+  }  
+};
+
+var data_xyz = [trace_x, trace_y, trace_z];
+
 document.addEventListener('DOMContentLoaded', async () => {
   butConnect.addEventListener('click', clickConnect);
   butClear.addEventListener('click', clickClear);
@@ -70,6 +92,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     const webGLnotSupported = document.getElementById('webGLnotSupported');
     webGLnotSupported.classList.add('hidden');
   }
+
+  Plotly.newPlot('plot1', data_xyz, layout_xyz, config);
 
   initBaudRate();
   loadAllSettings();
@@ -484,6 +508,8 @@ async function render() {
           'YZX'
         );
         bunny.setRotationFromEuler(rotationEuler);
+
+        Plotly.extendTraces('plot1', {y:[[orientation[0]], [orientation[1]], [orientation[2]]]}, [0, 1, 2], 300);
       } 
       else {
         let rotationEuler = new THREE.Euler(
