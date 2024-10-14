@@ -79,7 +79,7 @@ button {
 }
 
 .main {
-  flex: 2;
+  flex: 1;
   overflow-x: hidden;
   overflow-y: auto;
   padding-top: 80px;
@@ -151,14 +151,14 @@ button {
 
 .animation-container {
   position: relative;
-  height:40vh;
-  width: 50%;
+  height:30vh;
+  width: 100%;
   margin: 10px auto;
 }
 
 .chart-container {
   position: relative;
-  height:40vh;
-  width: 50%;
+  height:30vh;
+  width: 100%;
   margin: 10px auto;
 }
