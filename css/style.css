@@ -155,3 +155,10 @@ button {
   width: 100%;
   margin: 10px auto;
 }
+
+.chart-container {
+  position: relative;
+  height:40vh;
+  width: 100%;
+  margin: 10px auto;
+}
