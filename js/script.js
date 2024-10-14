@@ -20,7 +20,7 @@ let outputStream;
 let showCalibration = false;
 
 let orientation = [0, 0, 0];
-let quaternion = [1, 0, 0, 0];
+let quaternion  = [1, 0, 0, 0];
 let calibration = [0, 0, 0, 0];
 
 const maxLogLength  = 100;
@@ -115,6 +115,8 @@ let trace_z = {
 let data_xyz = [trace_x, trace_y, trace_z];
 
 document.addEventListener('DOMContentLoaded', async () => {
+  console.log("DOMContentLoaded");
+  
   butConnect.addEventListener('click', clickConnect);
   butClear.addEventListener('click', clickClear);
   autoscroll.addEventListener('click', clickAutoscroll);
