@@ -72,6 +72,46 @@ var layout_xyz = {
   }  
 };
 
+trace_x = {
+  // type: 'line',
+  type: 'scattergl',
+  // x: [1, 2, 3, 4],
+  y: [0],
+  mode: 'lines',
+  name: 'X',
+  // fill: 'tozeroy',
+  line: {
+    // color: 'rgb(219, 64, 82)',
+    width: 1
+  }
+};
+
+trace_y = {
+  // type: 'line',
+  type: 'scattergl',
+  // x: [1, 2, 3, 4],
+  y: [0],
+  mode: 'lines',
+  name: 'Y',
+  line: {
+    // color: 'rgb(55, 128, 191)',
+    width: 1
+  }
+};
+
+trace_z = {
+  // type: 'line',
+  type: 'scattergl',
+  // x: [1, 2, 3, 4],
+  y: [0],
+  mode: 'lines',
+  name: 'Z',
+  line: {
+    // color: 'rgb(55, 128, 191)',
+    width: 1
+  }
+};
+
 var data_xyz = [trace_x, trace_y, trace_z];
 
 document.addEventListener('DOMContentLoaded', async () => {
