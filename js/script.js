@@ -52,9 +52,9 @@ function fitToContainer(canvas){
   canvas.height = canvas.offsetHeight;
 }
 
-var config = {responsive: true}
+let config = {responsive: true}
 
-var layout_xyz = {
+let layout_xyz = {
   autosize: true,
   // margin: { t: 5, b: 5, l: 5, r: 5 },
 
@@ -112,7 +112,7 @@ let trace_z = {
   }
 };
 
-var data_xyz = [trace_x, trace_y, trace_z];
+let data_xyz = [trace_x, trace_y, trace_z];
 
 document.addEventListener('DOMContentLoaded', async () => {
   butConnect.addEventListener('click', clickConnect);
@@ -548,8 +548,6 @@ async function render() {
           'YZX'
         );
         bunny.setRotationFromEuler(rotationEuler);
-
-        Plotly.extendTraces('plot1', {y:[[orientation[0]], [orientation[1]], [orientation[2]]]}, [0, 1, 2], 300);
       } 
       else {
         let rotationEuler = new THREE.Euler(
@@ -566,6 +564,8 @@ async function render() {
       bunny.setRotationFromQuaternion(rotationQuaternion);
     }
   }
+
+  Plotly.extendTraces('plot1', {y:[[orientation[0]], [orientation[1]], [orientation[2]]]}, [0, 1, 2], 300);
 
   renderer.render(scene, camera);
   
