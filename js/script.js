@@ -243,6 +243,8 @@ function logData(line) {
     log.innerHTML += '<span class="timestamp">' + timestamp + ' -> </span>';
     
     d = null;
+
+    Plotly.extendTraces('plot1', {x:[timestamp], y:[[orientation[0]], [orientation[1]], [orientation[2]]]}, [0, 1, 2], 300);
   }
 
   log.innerHTML += line+ "<br>";
