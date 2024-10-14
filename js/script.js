@@ -115,8 +115,6 @@ let trace_z = {
 let data_xyz = [trace_x, trace_y, trace_z];
 
 document.addEventListener('DOMContentLoaded', async () => {
-  console.log("DOMContentLoaded");
-  
   butConnect.addEventListener('click', clickConnect);
   butClear.addEventListener('click', clickClear);
   autoscroll.addEventListener('click', clickAutoscroll);
@@ -225,7 +223,7 @@ async function readLoop() {
       }
     }
 
-    await Plotly.extendTraces('plot1', {y:[[orientation[0]], [orientation[1]], [orientation[2]]]}, [0, 1, 2], 300);
+    // await Plotly.extendTraces('plot1', {y:[[orientation[0]], [orientation[1]], [orientation[2]]]}, [0, 1, 2], 300);
     
     if (done) {
       console.log('[readLoop] DONE', done);
@@ -570,6 +568,7 @@ async function render() {
   }
 
   renderer.render(scene, camera);
+  await Plotly.extendTraces('plot1', {y:[[orientation[0]], [orientation[1]], [orientation[2]]]}, [0, 1, 2], 300);
   
   updateCalibration();
   
