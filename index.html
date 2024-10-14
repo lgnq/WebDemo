@@ -19,6 +19,7 @@
             }
         }
     </script>
+
     <!-- import the webpage's stylesheet -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/light.css" id="light" class="alternate" disabled>
@@ -26,6 +27,8 @@
 
     <!-- import the webpage's javascript file -->
     <script type="module" src="js/script.js" defer></script>
+
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   </head>
   <body>
     <header class="header">
@@ -62,6 +65,10 @@
       <div id="log-container" class="row">
         <div id="log" class="log"></div>
         <div id="calibration" class="calibration-container"></div>
+      </div>
+
+      <div class="chart" id="chart1" style="display: block;">
+        <div id="plot1" style="height: 100%;"></div>
       </div>
       
       <div class="controls">
