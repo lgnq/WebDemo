@@ -223,7 +223,7 @@ async function readLoop() {
       }
     }
 
-    // await Plotly.extendTraces('plot1', {y:[[orientation[0]], [orientation[1]], [orientation[2]]]}, [0, 1, 2], 300);
+    Plotly.extendTraces('plot1', {y:[[orientation[0]], [orientation[1]], [orientation[2]]]}, [0, 1, 2], 300);
     
     if (done) {
       console.log('[readLoop] DONE', done);
@@ -568,7 +568,7 @@ async function render() {
   }
 
   renderer.render(scene, camera);
-  Plotly.extendTraces('plot1', {y:[[orientation[0]], [orientation[1]], [orientation[2]]]}, [0, 1, 2], 300);
+  // Plotly.extendTraces('plot1', {y:[[orientation[0]], [orientation[1]], [orientation[2]]]}, [0, 1, 2], 300);
   
   updateCalibration();
   
