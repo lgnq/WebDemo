@@ -75,7 +75,7 @@ let layout_xyz = {
 let trace_x = {
   // type: 'line',
   type: 'scattergl',
-  // x: [1, 2, 3, 4],
+  x: [0],
   y: [0],
   mode: 'lines',
   name: 'X',
@@ -89,7 +89,7 @@ let trace_x = {
 let trace_y = {
   // type: 'line',
   type: 'scattergl',
-  // x: [1, 2, 3, 4],
+  x: [0],
   y: [0],
   mode: 'lines',
   name: 'Y',
@@ -102,7 +102,7 @@ let trace_y = {
 let trace_z = {
   // type: 'line',
   type: 'scattergl',
-  // x: [1, 2, 3, 4],
+  x: [0],
   y: [0],
   mode: 'lines',
   name: 'Z',
@@ -242,7 +242,7 @@ function logData(line) {
 
     log.innerHTML += '<span class="timestamp">' + timestamp + ' -> </span>';
     
-    // Plotly.extendTraces('plot1', {x:[[d.getMilliseconds()], [d.getMilliseconds()], [d.getMilliseconds()]], y:[[orientation[0]], [orientation[1]], [orientation[2]]]}, [0, 1, 2], 300);
+    Plotly.extendTraces('plot1', {x:[[d.getMilliseconds()], [d.getMilliseconds()], [d.getMilliseconds()]], y:[[orientation[0]], [orientation[1]], [orientation[2]]]}, [0, 1, 2], 300);
     
     d = null;
   }
@@ -559,7 +559,7 @@ async function render() {
   }
 
   renderer.render(scene, camera);
-  Plotly.extendTraces('plot1', {y:[[orientation[0]], [orientation[1]], [orientation[2]]]}, [0, 1, 2], 300);
+  // Plotly.extendTraces('plot1', {y:[[orientation[0]], [orientation[1]], [orientation[2]]]}, [0, 1, 2], 300);
   
   updateCalibration();
   
