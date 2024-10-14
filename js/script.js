@@ -75,7 +75,7 @@ let layout_xyz = {
 let trace_x = {
   // type: 'line',
   type: 'scattergl',
-  x: [0],
+  // x: [0],
   y: [0],
   mode: 'lines',
   name: 'X',
@@ -89,7 +89,7 @@ let trace_x = {
 let trace_y = {
   // type: 'line',
   type: 'scattergl',
-  x: [0],
+  // x: [0],
   y: [0],
   mode: 'lines',
   name: 'Y',
@@ -102,7 +102,7 @@ let trace_y = {
 let trace_z = {
   // type: 'line',
   type: 'scattergl',
-  x: [0],
+  // x: [0],
   y: [0],
   mode: 'lines',
   name: 'Z',
