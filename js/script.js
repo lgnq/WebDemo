@@ -72,7 +72,7 @@ var layout_xyz = {
   }  
 };
 
-trace_x = {
+let trace_x = {
   // type: 'line',
   type: 'scattergl',
   // x: [1, 2, 3, 4],
@@ -86,7 +86,7 @@ trace_x = {
   }
 };
 
-trace_y = {
+let trace_y = {
   // type: 'line',
   type: 'scattergl',
   // x: [1, 2, 3, 4],
@@ -99,7 +99,7 @@ trace_y = {
   }
 };
 
-trace_z = {
+let trace_z = {
   // type: 'line',
   type: 'scattergl',
   // x: [1, 2, 3, 4],
