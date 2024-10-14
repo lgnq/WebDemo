@@ -399,17 +399,6 @@ class LineBreakTransformer {
   }
 }
 
-function convertJSON(chunk) {
-  try {
-    let jsonObj = JSON.parse(chunk);
-    jsonObj._raw = chunk;
-    return jsonObj;
-  } 
-  catch (e) {
-    return chunk;
-  }
-}
-
 function toggleUIConnected(connected) {
   let lbl = 'Connect';
 
