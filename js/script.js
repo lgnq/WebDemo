@@ -86,15 +86,16 @@ document.addEventListener('DOMContentLoaded', async () => {
 async function connect() {
   // - Request a port and open a connection.
   port = await navigator.serial.requestPort();
-  
+
   // - Wait for the port to open.toggleUIConnected
   await port.open({ baudRate: baudRate.value });
 
   let decoder = new TextDecoderStream();
-  inputDone = port.readable.pipeTo(decoder.writable);
+  inputDone   = port.readable.pipeTo(decoder.writable);
   inputStream = decoder.readable.pipeThrough(new TransformStream(new LineBreakTransformer()));
 
   reader = inputStream.getReader();
+
   readLoop().catch(async function(error) {
     toggleUIConnected(false);
     await disconnect();
@@ -135,6 +136,10 @@ async function readLoop() {
 
     if (value) {
       let plotdata;
+
+      if (value.substr(0, 1) == "$") {
+        orientation = value.substr(1).trim().split(" ").map(x=>+x);
+      }
 
       if (value.substr(0, 12) == "Orientation:") {
         orientation = value.substr(12).trim().split(",").map(x=>+x);
