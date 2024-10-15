@@ -379,6 +379,26 @@ async function sleep(ms) {
 }
 
 /**
+ * @name writeCmd
+ * Gets a writer from the output stream and send the command to the Smart USB Dongle 2.0.
+ * @param  {string} cmd command to send to the Smart USB Dongle 2.0
+ */
+function writeCmd(cmd) {
+  // Write to output stream
+  const writer = outputStream.getWriter();
+  console.log("[SEND]", cmd);
+
+  writer.write(cmd);
+
+  // Ignores sending carriage return if sending Ctrl+C
+  if (cmd !== "\x03") {
+    writer.write("\r"); // Important to send a carriage return after a command
+  }
+  
+  writer.releaseLock();
+}
+
+/**
  * @name LineBreakTransformer
  * TransformStream to parse the stream into lines.
  */
