@@ -390,7 +390,7 @@ function writeCmd(event) {
   const writer = outputStream.getWriter();
 
   console.log(myInput.value);
-  console.log(event.keyCode);
+  // console.log(event.keyCode);
 
   if (event.keyCode === 13) {
     console.log("Enter");
