@@ -389,8 +389,9 @@ function writeCmd(event) {
   // Write to output stream
   const writer = outputStream.getWriter();
 
+  console.log(myInput.value);
+
   if (event.key == 'Enter') {
-    console.log("[SEND]", myInput.value);
     writer.write(myInput.value);
   }
 
