@@ -158,6 +158,10 @@ async function connect() {
   inputDone   = port.readable.pipeTo(decoder.writable);
   inputStream = decoder.readable.pipeThrough(new TransformStream(new LineBreakTransformer()));
 
+  const encoder = new TextEncoderStream();
+  outputDone    = encoder.readable.pipeTo(port.writable);
+  outputStream  = encoder.writable;
+
   reader = inputStream.getReader();
 
   readLoop().catch(async function(error) {
