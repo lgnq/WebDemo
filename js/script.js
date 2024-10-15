@@ -390,8 +390,9 @@ function writeCmd(event) {
   const writer = outputStream.getWriter();
 
   console.log(myInput.value);
+  console.log(event.keyCode);
 
-  if (event.key == 'Enter') {
+  if (event.keyCode == 'Enter') {
     writer.write(myInput.value);
   }
 
