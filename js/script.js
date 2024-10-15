@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   baudRate.addEventListener('change', changeBaudRate);
   angleType.addEventListener('change', changeAngleType);
   darkMode.addEventListener('click', clickDarkMode);
-  myInput.addEventListener('onkeydown', writeCmd);
+  myInput.addEventListener('keydown', writeCmd);
 
   if ('serial' in navigator) {
     const notSupported = document.getElementById('notSupported');
