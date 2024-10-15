@@ -389,11 +389,9 @@ function writeCmd(event) {
   // Write to output stream
   const writer = outputStream.getWriter();
 
-  console.log(myInput.value);
-  // console.log(event.keyCode);
-
   if (event.keyCode === 13) {
     writer.write(myInput.value + '\r');
+    myInput.value = ''
   }
 
   // Ignores sending carriage return if sending Ctrl+C
