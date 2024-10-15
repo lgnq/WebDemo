@@ -395,7 +395,7 @@ function writeCmd(event) {
   if (event.keyCode === 13) {
     console.log("Enter");
 
-    writer.write(myInput.value);
+    writer.write(myInput.value + '\r');
   }
 
   // Ignores sending carriage return if sending Ctrl+C
