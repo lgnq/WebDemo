@@ -393,8 +393,6 @@ function writeCmd(event) {
   // console.log(event.keyCode);
 
   if (event.keyCode === 13) {
-    // console.log("Enter");
-
     writer.write(myInput.value + '\r');
   }
 
