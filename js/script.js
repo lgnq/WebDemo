@@ -390,6 +390,8 @@ function writeCmd(event) {
   const writer = outputStream.getWriter();
 
   if (event.keyCode === 13) {
+    console.log(myInput.value);
+    
     writer.write(myInput.value + '\r');
     myInput.value = ''
   }
