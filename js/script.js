@@ -393,6 +393,8 @@ function writeCmd(event) {
   console.log(event.keyCode);
 
   if (event.keyCode == 'Enter') {
+    console.log("Enter");
+
     writer.write(myInput.value);
   }
 
