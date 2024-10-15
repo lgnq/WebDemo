@@ -39,6 +39,7 @@ const darkMode      = document.getElementById('darkmode');
 const canvas        = document.querySelector('#canvas');
 const calContainer  = document.getElementById('calibration');
 const logContainer  = document.getElementById("log-container");
+const myInput       = document.getElementById('myInput');
 
 fitToContainer(canvas);
 
@@ -122,6 +123,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   baudRate.addEventListener('change', changeBaudRate);
   angleType.addEventListener('change', changeAngleType);
   darkMode.addEventListener('click', clickDarkMode);
+  myInput.addEventListener('change', writeCmd);
 
   if ('serial' in navigator) {
     const notSupported = document.getElementById('notSupported');
@@ -383,17 +385,19 @@ async function sleep(ms) {
  * Gets a writer from the output stream and send the command to the Smart USB Dongle 2.0.
  * @param  {string} cmd command to send to the Smart USB Dongle 2.0
  */
-function writeCmd(cmd) {
+function writeCmd(event) {
   // Write to output stream
   const writer = outputStream.getWriter();
-  console.log("[SEND]", cmd);
 
-  writer.write(cmd);
+  if (event.key == 'Enter') {
+    console.log("[SEND]", myInput.value);
+    writer.write(myInput.value);
+  }
 
   // Ignores sending carriage return if sending Ctrl+C
-  if (cmd !== "\x03") {
-    writer.write("\r"); // Important to send a carriage return after a command
-  }
+  // if (cmd !== "\x03") {
+    // writer.write("\r"); // Important to send a carriage return after a command
+  // }
   
   writer.releaseLock();
 }
