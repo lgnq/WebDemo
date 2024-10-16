@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   loadAllSettings();
   updateTheme();
   await finishDrawing();
-  await render();
+  // await render();
 });
 
 /**
