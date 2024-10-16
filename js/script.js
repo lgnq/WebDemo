@@ -469,15 +469,15 @@ function loadSetting(setting, defaultValue) {
   return value;
 }
 
-let isWebGLAvailable = function() {
-  try {
-    var canvas = document.createElement( 'canvas' );
-    return !! (window.WebGLRenderingContext && (canvas.getContext('webgl') || canvas.getContext('experimental-webgl')));
-  } 
-  catch (e) {
-    return false;
-  }
-}
+// let isWebGLAvailable = function() {
+//   try {
+//     var canvas = document.createElement( 'canvas' );
+//     return !! (window.WebGLRenderingContext && (canvas.getContext('webgl') || canvas.getContext('experimental-webgl')));
+//   } 
+//   catch (e) {
+//     return false;
+//   }
+// }
 
 function updateCalibration() {
   // Update the Calibration Container with the values from calibration
@@ -506,94 +506,94 @@ function saveSetting(setting, value) {
   window.localStorage.setItem(setting, JSON.stringify(value));
 }
 
-let bunny;
+// let bunny;
 
-const renderer = new THREE.WebGLRenderer({canvas});
+// const renderer = new THREE.WebGLRenderer({canvas});
 
-const camera = new THREE.PerspectiveCamera(45, canvas.width/canvas.height, 0.1, 100);
-camera.position.set(0, 0, 30);
+// const camera = new THREE.PerspectiveCamera(45, canvas.width/canvas.height, 0.1, 100);
+// camera.position.set(0, 0, 30);
 
-const scene = new THREE.Scene();
-scene.background = new THREE.Color('black');
+// const scene = new THREE.Scene();
+// scene.background = new THREE.Color('black');
 
-{
-  const skyColor = 0xB1E1FF;  // light blue
-  const groundColor = 0x666666;  // black
-  const intensity = 0.5;
-  const light = new THREE.HemisphereLight(skyColor, groundColor, intensity);
-  scene.add(light);
-}
+// {
+//   const skyColor = 0xB1E1FF;  // light blue
+//   const groundColor = 0x666666;  // black
+//   const intensity = 0.5;
+//   const light = new THREE.HemisphereLight(skyColor, groundColor, intensity);
+//   scene.add(light);
+// }
 
-{
-  const color = 0xFFFFFF;
-  const intensity = 1;
-  const light = new THREE.DirectionalLight(color, intensity);
-  light.position.set(0, 10, 0);
-  light.target.position.set(-5, 0, 0);
-  scene.add(light);
-  scene.add(light.target);
-}
+// {
+//   const color = 0xFFFFFF;
+//   const intensity = 1;
+//   const light = new THREE.DirectionalLight(color, intensity);
+//   light.position.set(0, 10, 0);
+//   light.target.position.set(-5, 0, 0);
+//   scene.add(light);
+//   scene.add(light.target);
+// }
 
-{
-  const objLoader = new OBJLoader();
-  objLoader.load('assets/bunny.obj', (root) => {
-    bunny = root;
-    scene.add(root);
-  });
-}
+// {
+//   const objLoader = new OBJLoader();
+//   objLoader.load('assets/bunny.obj', (root) => {
+//     bunny = root;
+//     scene.add(root);
+//   });
+// }
 
-function resizeRendererToDisplaySize(renderer) {
-  const canvas = renderer.domElement;
-  const width = canvas.clientWidth;
-  const height = canvas.clientHeight;
-  const needResize = canvas.width !== width || canvas.height !== height;
-  if (needResize) {
-    renderer.setSize(width, height, false);
-  }
-  return needResize;
-}
+// function resizeRendererToDisplaySize(renderer) {
+//   const canvas = renderer.domElement;
+//   const width = canvas.clientWidth;
+//   const height = canvas.clientHeight;
+//   const needResize = canvas.width !== width || canvas.height !== height;
+//   if (needResize) {
+//     renderer.setSize(width, height, false);
+//   }
+//   return needResize;
+// }
 
-async function render() {
-  if (resizeRendererToDisplaySize(renderer)) {
-    const canvas = renderer.domElement;
-    camera.aspect = canvas.clientWidth / canvas.clientHeight;
-    camera.updateProjectionMatrix();
-  }
+// async function render() {
+//   if (resizeRendererToDisplaySize(renderer)) {
+//     const canvas = renderer.domElement;
+//     camera.aspect = canvas.clientWidth / canvas.clientHeight;
+//     camera.updateProjectionMatrix();
+//   }
 
-  if (bunny != undefined) {
-    if (angleType.value == "euler") {
-      if (showCalibration) {
-          // BNO055
-        let rotationEuler = new THREE.Euler(
-          THREE.MathUtils.degToRad(360 - orientation[2]),
-          THREE.MathUtils.degToRad(orientation[0]),
-          THREE.MathUtils.degToRad(orientation[1]),
-          'YZX'
-        );
-        bunny.setRotationFromEuler(rotationEuler);
-      } 
-      else {
-        let rotationEuler = new THREE.Euler(
-          THREE.MathUtils.degToRad(orientation[2]),
-          THREE.MathUtils.degToRad(orientation[0]-180),
-          THREE.MathUtils.degToRad(-orientation[1]),
-          'YZX'
-        );
-        bunny.setRotationFromEuler(rotationEuler);
-      }
-    } 
-    else {
-      let rotationQuaternion = new THREE.Quaternion(quaternion[1], quaternion[3], -quaternion[2], quaternion[0]);
-      bunny.setRotationFromQuaternion(rotationQuaternion);
-    }
-  }
+//   if (bunny != undefined) {
+//     if (angleType.value == "euler") {
+//       if (showCalibration) {
+//           // BNO055
+//         let rotationEuler = new THREE.Euler(
+//           THREE.MathUtils.degToRad(360 - orientation[2]),
+//           THREE.MathUtils.degToRad(orientation[0]),
+//           THREE.MathUtils.degToRad(orientation[1]),
+//           'YZX'
+//         );
+//         bunny.setRotationFromEuler(rotationEuler);
+//       } 
+//       else {
+//         let rotationEuler = new THREE.Euler(
+//           THREE.MathUtils.degToRad(orientation[2]),
+//           THREE.MathUtils.degToRad(orientation[0]-180),
+//           THREE.MathUtils.degToRad(-orientation[1]),
+//           'YZX'
+//         );
+//         bunny.setRotationFromEuler(rotationEuler);
+//       }
+//     } 
+//     else {
+//       let rotationQuaternion = new THREE.Quaternion(quaternion[1], quaternion[3], -quaternion[2], quaternion[0]);
+//       bunny.setRotationFromQuaternion(rotationQuaternion);
+//     }
+//   }
 
-  renderer.render(scene, camera);
-  // Plotly.extendTraces('plot1', {y:[[orientation[0]], [orientation[1]], [orientation[2]]]}, [0, 1, 2], 300);
+//   renderer.render(scene, camera);
+//   // Plotly.extendTraces('plot1', {y:[[orientation[0]], [orientation[1]], [orientation[2]]]}, [0, 1, 2], 300);
   
-  updateCalibration();
+//   updateCalibration();
   
-  await sleep(10); // Allow 10ms for UI updates
-  await finishDrawing();
-  await render();
-}
+//   await sleep(10); // Allow 10ms for UI updates
+//   await finishDrawing();
+//   await render();
+// }
