@@ -19,7 +19,7 @@ let inputStream;
 let outputStream;
 let showCalibration = false;
 
-let orientation = [0, 0, 0];
+let orientations = [0, 0, 0];
 let quaternion  = [1, 0, 0, 0];
 let calibration = [0, 0, 0, 0];
 
@@ -130,10 +130,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     notSupported.classList.add('hidden');
   }
 
-  // if (isWebGLAvailable()) {
-  //   const webGLnotSupported = document.getElementById('webGLnotSupported');
-  //   webGLnotSupported.classList.add('hidden');
-  // }
+  if (isWebGLAvailable()) {
+    const webGLnotSupported = document.getElementById('webGLnotSupported');
+    webGLnotSupported.classList.add('hidden');
+  }
 
   Plotly.newPlot('plot1', data_xyz, layout_xyz, config);
 
@@ -208,11 +208,11 @@ async function readLoop() {
       let plotdata;
 
       if (value.substr(0, 1) == "$") {
-        orientation = value.substr(1).trim().split(" ").map(x=>+x);
+        orientations = value.substr(1).trim().split(" ").map(x=>+x);
       }
 
-      if (value.substr(0, 12) == "Orientation:") {
-        orientation = value.substr(12).trim().split(",").map(x=>+x);
+      if (value.substr(0, 12) == "orientation:") {
+        orientations = value.substr(12).trim().split(",").map(x=>+x);
       }
     
       if (value.substr(0, 11) == "Quaternion:") {
@@ -229,7 +229,7 @@ async function readLoop() {
       }
     }
 
-    Plotly.extendTraces('plot1', {y:[[orientation[0]], [orientation[1]], [orientation[2]]]}, [0, 1, 2], 300);
+    Plotly.extendTraces('plot1', {y:[[orientations[0]], [orientations[1]], [orientations[2]]]}, [0, 1, 2], 300);
     
     if (done) {
       console.log('[readLoop] DONE', done);
@@ -248,7 +248,7 @@ function logData(line) {
 
     log.innerHTML += '<span class="timestamp">' + timestamp + ' -> </span>';
     
-    // Plotly.extendTraces('plot1', {x:[[d.getMilliseconds()], [d.getMilliseconds()], [d.getMilliseconds()]], y:[[orientation[0]], [orientation[1]], [orientation[2]]]}, [0, 1, 2], 300);
+    // Plotly.extendTraces('plot1', {x:[[d.getMilliseconds()], [d.getMilliseconds()], [d.getMilliseconds()]], y:[[orientations[0]], [orientations[1]], [orientations[2]]]}, [0, 1, 2], 300);
     
     d = null;
   }
@@ -565,18 +565,18 @@ function saveSetting(setting, value) {
 //       if (showCalibration) {
 //           // BNO055
 //         let rotationEuler = new THREE.Euler(
-//           THREE.MathUtils.degToRad(360 - orientation[2]),
-//           THREE.MathUtils.degToRad(orientation[0]),
-//           THREE.MathUtils.degToRad(orientation[1]),
+//           THREE.MathUtils.degToRad(360 - orientations[2]),
+//           THREE.MathUtils.degToRad(orientations[0]),
+//           THREE.MathUtils.degToRad(orientations[1]),
 //           'YZX'
 //         );
 //         bunny.setRotationFromEuler(rotationEuler);
 //       } 
 //       else {
 //         let rotationEuler = new THREE.Euler(
-//           THREE.MathUtils.degToRad(orientation[2]),
-//           THREE.MathUtils.degToRad(orientation[0]-180),
-//           THREE.MathUtils.degToRad(-orientation[1]),
+//           THREE.MathUtils.degToRad(orientations[2]),
+//           THREE.MathUtils.degToRad(orientations[0]-180),
+//           THREE.MathUtils.degToRad(-orientations[1]),
 //           'YZX'
 //         );
 //         bunny.setRotationFromEuler(rotationEuler);
@@ -589,7 +589,7 @@ function saveSetting(setting, value) {
 //   }
 
 //   renderer.render(scene, camera);
-//   // Plotly.extendTraces('plot1', {y:[[orientation[0]], [orientation[1]], [orientation[2]]]}, [0, 1, 2], 300);
+//   // Plotly.extendTraces('plot1', {y:[[orientations[0]], [orientations[1]], [orientations[2]]]}, [0, 1, 2], 300);
   
 //   updateCalibration();
   
