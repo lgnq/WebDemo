@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   initBaudRate();
   loadAllSettings();
   updateTheme();
-  await finishDrawing();
+  // await finishDrawing();
   // await render();
 });
 
