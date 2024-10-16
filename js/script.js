@@ -8,8 +8,8 @@
 /* global TextDecoderStream */
 'use strict';
 
-import * as THREE from 'three';
-import {OBJLoader} from 'objloader';
+// import * as THREE from 'three';
+// import {OBJLoader} from 'objloader';
 
 let port;
 let reader;
