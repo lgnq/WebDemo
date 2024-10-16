@@ -130,10 +130,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     notSupported.classList.add('hidden');
   }
 
-  if (isWebGLAvailable()) {
-    const webGLnotSupported = document.getElementById('webGLnotSupported');
-    webGLnotSupported.classList.add('hidden');
-  }
+  // if (isWebGLAvailable()) {
+  //   const webGLnotSupported = document.getElementById('webGLnotSupported');
+  //   webGLnotSupported.classList.add('hidden');
+  // }
 
   Plotly.newPlot('plot1', data_xyz, layout_xyz, config);
 
