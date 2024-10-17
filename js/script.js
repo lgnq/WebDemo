@@ -617,4 +617,4 @@ var interval = setInterval(function() {
   }, [0])
 
   if(++cnt === 100) clearInterval(interval);
-}, 300);
+}, 500);
