@@ -74,7 +74,7 @@ let layout_xyz = {
 };
 
 let trace_x = {
-  type: 'line',
+  // type: 'line',
   // type: 'scattergl',
   // x: [0],
   y: [0],
@@ -88,8 +88,8 @@ let trace_x = {
 };
 
 let trace_y = {
-  // type: 'line',
-  type: 'scattergl',
+  type: 'line',
+  // type: 'scattergl',
   // x: [0],
   y: [0],
   mode: 'lines',
