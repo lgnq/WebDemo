@@ -613,7 +613,7 @@ var cnt = 0;
 var interval = setInterval(function() {
 
   Plotly.extendTraces('myDiv', {
-    y: [[orientations[1]]]
+    y: [[orientations[0]]]
   }, [0])
 
   if(++cnt === 100) clearInterval(interval);
