@@ -211,7 +211,7 @@ async function readLoop() {
         orientations = value.substr(1).trim().split(" ").map(x=>+x);
       }
 
-      if (value.substr(0, 12) == "orientation:") {
+      if (value.substr(0, 12) == "Orientation:") {
         orientations = value.substr(12).trim().split(",").map(x=>+x);
       }
     
