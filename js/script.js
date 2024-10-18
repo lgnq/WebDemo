@@ -114,7 +114,8 @@ let trace_z = {
   }
 };
 
-let data_xyz = [trace_x, trace_y, trace_z];
+// let data_xyz = [trace_x, trace_y, trace_z];
+let data_xyz = [trace_x];
 
 document.addEventListener('DOMContentLoaded', async () => {
   butConnect.addEventListener('click', clickConnect);
