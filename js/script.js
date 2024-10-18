@@ -603,7 +603,7 @@ function rand() {
   return Math.random();
 }
 
-Plotly.newPlot('myDiv', [{
+Plotly.newPlot('plot1', [{
   y: [1,2,3].map(rand),
   mode: 'lines',
   line: {color: '#80CAF6'}
@@ -613,12 +613,13 @@ var cnt = 0;
 
 var interval = setInterval(function() {
 
-  Plotly.extendTraces('myDiv', {
+  Plotly.extendTraces('plot1', {
     y: [[orientations[0]]]
   }, [0])
 
-  if(++cnt === 100) clearInterval(interval);
+  if(++cnt === 100) 
+    clearInterval(interval);
 }, 500);
 
 // Plotly.newPlot('plot1', data_xyz, layout_xyz, config);
-Plotly.newPlot('plot1', data_xyz);
+Plotly.newPlot('myDiv', data_xyz);
