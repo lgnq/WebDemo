@@ -620,4 +620,5 @@ var interval = setInterval(function() {
   if(++cnt === 100) clearInterval(interval);
 }, 500);
 
-Plotly.newPlot('plot1', data_xyz, layout_xyz, config);
+// Plotly.newPlot('plot1', data_xyz, layout_xyz, config);
+Plotly.newPlot('plot1', data_xyz);
