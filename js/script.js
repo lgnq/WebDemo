@@ -53,7 +53,8 @@ const myInput       = document.getElementById('myInput');
 //   canvas.height = canvas.offsetHeight;
 // }
 
-let config = {responsive: true}
+// let config = {responsive: true}
+let config = {responsive: false}
 
 let layout_xyz = {
   autosize: true,
