@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   //   webGLnotSupported.classList.add('hidden');
   // }
 
-  Plotly.newPlot('plot1', data_xyz, layout_xyz, config);
+  // Plotly.newPlot('plot1', data_xyz, layout_xyz, config);
 
   initBaudRate();
   loadAllSettings();
@@ -619,3 +619,5 @@ var interval = setInterval(function() {
 
   if(++cnt === 100) clearInterval(interval);
 }, 500);
+
+Plotly.newPlot('plot1', data_xyz, layout_xyz, config);
