@@ -619,7 +619,7 @@ Plotly.newPlot('plot1', [{
   mode: 'lines',
   line: {color: '#80CAF6'}
 }
-]);
+], layout_xyz, config);
 
 // var cnt = 0;
 
