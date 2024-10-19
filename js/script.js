@@ -339,14 +339,14 @@ async function clickConnect() {
 async function clickAddplot() {
   const ele = document.getElementById('chart1');
   const newDiv = document.createElement('div');
-  newDiv.innerHTML =  
-  `
-  id="plot3" style="height: 100%;"
-  `;
-  ele.appendChild(newDiv);
 
-  // document.getElementById('chart1').innerHTML +=
-  // '<div id="plot3" style="height: 100%;"></div>';
+  // Generate the Plotly chart
+  Plotly.newPlot(newDiv, [{
+    y: [10, 15, 13, 17, 20],
+    // type: 'scatter'
+  }]);
+
+  ele.appendChild(newDiv);
 }
 
 /**
