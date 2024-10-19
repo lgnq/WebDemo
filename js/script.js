@@ -76,7 +76,7 @@ let layout_xyz = {
 
 let trace_x = {
   // type: 'line',
-  type: 'scattergl',
+  // type: 'scattergl',
   // x: [0],
   y: [0],
   mode: 'lines',
@@ -89,7 +89,7 @@ let trace_x = {
 };
 
 let trace_y = {
-  type: 'line',
+  // type: 'line',
   // type: 'scattergl',
   // x: [0],
   y: [0],
@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   //   webGLnotSupported.classList.add('hidden');
   // }
 
-  // Plotly.newPlot('plot1', data_xyz, layout_xyz, config);
+  Plotly.newPlot('plot1', data_xyz, layout_xyz, config);
 
   initBaudRate();
   loadAllSettings();
@@ -607,20 +607,20 @@ function saveSetting(setting, value) {
 //   await render();
 // }
 
-function rand() {
-  return Math.random();
-}
+// function rand() {
+//   return Math.random();
+// }
 
-Plotly.newPlot('plot1', [{
-  y: [1,2,3].map(rand),
-  mode: 'lines',
-  line: {color: '#80CAF6'}
-},
-{
-  y: [1,2,3].map(rand),
-  mode: 'lines',
-  line: {color: '#80CAF6'}
-},
-trace_z
-], layout_xyz, config);
+// Plotly.newPlot('plot1', [{
+//   y: [1,2,3].map(rand),
+//   mode: 'lines',
+//   line: {color: '#80CAF6'}
+// },
+// {
+//   y: [1,2,3].map(rand),
+//   mode: 'lines',
+//   line: {color: '#80CAF6'}
+// },
+// trace_z
+// ], layout_xyz, config);
 
