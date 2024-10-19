@@ -116,7 +116,7 @@ let trace_y = {
 
 let trace_z = {
   type: 'scattergl',
-  y: [1,2,3].map(rand),
+  y: [0],
   mode: 'lines',
   line: {color: '#80CACD', width: 1}
 }
