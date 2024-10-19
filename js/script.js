@@ -117,7 +117,7 @@ let trace_y = {
 let trace_z = {
 y: [1,2,3].map(rand),
 mode: 'lines',
-line: {color: '#80CACC'}
+line: {color: '#80CACD'}
 }
 
 let data_xyz = [trace_x, trace_y, trace_z];
