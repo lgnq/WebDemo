@@ -621,18 +621,18 @@ Plotly.newPlot('plot1', [{
 }
 ]);
 
-var cnt = 0;
+// var cnt = 0;
 
-var interval = setInterval(function() {
+// var interval = setInterval(function() {
 
-  // Plotly.extendTraces('plot1', {
-  //   y: [[orientations[0]]]
-  // }, [0])
-  Plotly.extendTraces('plot1', {y:[[orientations[0]], [orientations[1]], [orientations[2]]]}, [0, 1, 2], 300);
+//   // Plotly.extendTraces('plot1', {
+//   //   y: [[orientations[0]]]
+//   // }, [0])
+//   Plotly.extendTraces('plot1', {y:[[orientations[0]], [orientations[1]], [orientations[2]]]}, [0, 1, 2], 300);
 
-  if(++cnt === 100) 
-    clearInterval(interval);
-}, 500);
+//   if(++cnt === 100) 
+//     clearInterval(interval);
+// }, 500);
 
 // Plotly.newPlot('plot1', data_xyz, layout_xyz, config);
 // Plotly.newPlot('myDiv', data_xyz);
