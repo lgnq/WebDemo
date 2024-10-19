@@ -101,18 +101,24 @@ let trace_y = {
   }
 };
 
+// let trace_z = {
+//   // type: 'line',
+//   type: 'scattergl',
+//   // x: [0],
+//   y: [0],
+//   mode: 'lines',
+//   name: 'Z',
+//   // line: {
+//   //   // color: 'rgb(55, 128, 191)',
+//   //   width: 1
+//   // }
+// };
+
 let trace_z = {
-  // type: 'line',
-  type: 'scattergl',
-  // x: [0],
-  y: [0],
-  mode: 'lines',
-  name: 'Z',
-  // line: {
-  //   // color: 'rgb(55, 128, 191)',
-  //   width: 1
-  // }
-};
+y: [1,2,3].map(rand),
+mode: 'lines',
+line: {color: '#80CAF6'}
+}
 
 let data_xyz = [trace_x, trace_y, trace_z];
 
