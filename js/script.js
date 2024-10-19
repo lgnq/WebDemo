@@ -604,16 +604,25 @@ function rand() {
   return Math.random();
 }
 
+<<<<<<< HEAD
 // Plotly.newPlot('plot1', [{
 //   y: [1,2,3].map(rand),
 //   mode: 'lines',
 //   line: {color: '#80CAF6'}
 // }]);
+=======
+Plotly.newPlot('myDiv', [{
+  y: [1,2,3].map(rand),
+  mode: 'lines',
+  line: {color: '#80CAF6'}
+}]);
+>>>>>>> parent of b69c53d (delete plotly demo)
 
 var cnt = 0;
 
 var interval = setInterval(function() {
 
+<<<<<<< HEAD
   Plotly.extendTraces('plot1', {
     y: [[orientations[0]]]
   }, [0])
@@ -625,3 +634,11 @@ var interval = setInterval(function() {
 // Plotly.newPlot('plot1', data_xyz, layout_xyz, config);
 Plotly.newPlot('myDiv', data_xyz);
 Plotly.newPlot('plot1', data_xyz);
+=======
+  Plotly.extendTraces('myDiv', {
+    y: [[rand()]]
+  }, [0])
+
+  if(++cnt === 100) clearInterval(interval);
+}, 300);
+>>>>>>> parent of b69c53d (delete plotly demo)
