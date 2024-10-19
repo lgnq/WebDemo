@@ -124,10 +124,6 @@ let trace_z = {
 
 let data_xyz = [trace_x, trace_y, trace_z];
 
-function rand() {
-  return Math.random();
-}
-
 document.addEventListener('DOMContentLoaded', async () => {
   butConnect.addEventListener('click', clickConnect);
   butClear.addEventListener('click', clickClear);
@@ -242,8 +238,7 @@ async function readLoop() {
       }
     }
 
-    // Plotly.extendTraces('plot1', {y:[[orientations[0]], [orientations[1]], [orientations[2]]]}, [0, 1, 2], 300);
-    Plotly.extendTraces('plot1', {y:[[rand()], [rand()], [rand()]]}, [0, 1, 2], 300);
+    Plotly.extendTraces('plot1', {y:[[orientations[0]], [orientations[1]], [orientations[2]]]}, [0, 1, 2], 300);
     
     if (done) {
       console.log('[readLoop] DONE', done);
