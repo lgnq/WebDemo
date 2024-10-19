@@ -115,7 +115,7 @@ let trace_y = {
 // };
 
 let trace_z = {
-  type: 'scattergl',
+  // type: 'scattergl',
   y: [0],
   mode: 'lines',
   name: 'Z',
