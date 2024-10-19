@@ -337,7 +337,7 @@ async function clickConnect() {
  * Click handler for the connect/disconnect button.
  */
 async function clickAddplot() {
-  const ele = document.getElementById('chart1');
+  const ele    = document.getElementById('chart1');
   const newDiv = document.createElement('div');
 
   // Generate the Plotly chart
