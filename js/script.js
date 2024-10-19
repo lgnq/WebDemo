@@ -338,9 +338,7 @@ async function clickConnect() {
  */
 async function clickAddplot() {
   document.getElementById('chart1').innerHTML +=
-  `
-  <div id="plot2" style="height: 100%;"></div>
-  `;
+  '<div id="plot3" style="height: 100%;"></div>';
 }
 
 /**
