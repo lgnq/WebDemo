@@ -337,12 +337,10 @@ async function clickConnect() {
  * Click handler for the connect/disconnect button.
  */
 async function clickAddplot() {
-  var div = document.getElementById('chart1');
-
-  var newElement = document.createElement('p');
-  newElement.textContent = 'Hello, world!';
-  
-  div.appendChild(newElement);
+  document.getElementById('chart1').innerHTML +=
+  `
+  <div id="plot2" style="height: 100%;"></div>
+  `;
 }
 
 /**
