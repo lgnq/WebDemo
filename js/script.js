@@ -118,6 +118,7 @@ let trace_z = {
   type: 'scattergl',
   y: [0],
   mode: 'lines',
+  name: 'Z',
   line: {color: '#80CACD', width: 1}
 }
 
