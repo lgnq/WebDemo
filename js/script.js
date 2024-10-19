@@ -28,6 +28,7 @@ const baudRates     = [300, 1200, 2400, 4800, 9600, 19200, 38400, 57600, 74880, 
 
 const log           = document.getElementById('log');
 const butConnect    = document.getElementById('butConnect');
+const butAddplot    = document.getElementById('butAddplot');
 const butClear      = document.getElementById('butClear');
 const baudRate      = document.getElementById('baudRate');
 const autoscroll    = document.getElementById('autoscroll');
@@ -118,6 +119,7 @@ let data_xyz = [trace_x, trace_y, trace_z];
 
 document.addEventListener('DOMContentLoaded', async () => {
   butConnect.addEventListener('click', clickConnect);
+  butAddplot.addEventListener('click', clickAddplot);
   butClear.addEventListener('click', clickClear);
   autoscroll.addEventListener('click', clickAutoscroll);
   showTimestamp.addEventListener('click', clickTimestamp);
@@ -328,6 +330,19 @@ async function clickConnect() {
   reset();
 
   toggleUIConnected(true);
+}
+
+/**
+ * @name clickAddplot
+ * Click handler for the connect/disconnect button.
+ */
+async function clickAddplot() {
+  var div = document.getElementById('chart1');
+
+  var newElement = document.createElement('p');
+  newElement.textContent = 'Hello, world!';
+  
+  div.appendChild(newElement);
 }
 
 /**
