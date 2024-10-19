@@ -53,11 +53,11 @@ const myInput       = document.getElementById('myInput');
 //   canvas.height = canvas.offsetHeight;
 // }
 
-// let config = {responsive: true}
-let config = {responsive: false}
+let config = {responsive: true}
+// let config = {responsive: false}
 
 let layout_xyz = {
-  autosize: true,
+  // autosize: true,
   // margin: { t: 5, b: 5, l: 5, r: 5 },
 
   title: 'XYZ Plot',
@@ -114,8 +114,8 @@ let trace_z = {
   }
 };
 
-// let data_xyz = [trace_x, trace_y, trace_z];
-let data_xyz = [trace_x];
+let data_xyz = [trace_x, trace_y, trace_z];
+// let data_xyz = [trace_x];
 
 document.addEventListener('DOMContentLoaded', async () => {
   butConnect.addEventListener('click', clickConnect);
