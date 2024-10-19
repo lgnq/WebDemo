@@ -115,9 +115,10 @@ let trace_y = {
 // };
 
 let trace_z = {
-y: [1,2,3].map(rand),
-mode: 'lines',
-line: {color: '#80CACD'}
+  type: 'scattergl',
+  y: [1,2,3].map(rand),
+  mode: 'lines',
+  line: {color: '#80CACD', width: 1}
 }
 
 let data_xyz = [trace_x, trace_y, trace_z];
