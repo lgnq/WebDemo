@@ -115,7 +115,6 @@ let trace_z = {
 };
 
 let data_xyz = [trace_x, trace_y, trace_z];
-// let data_xyz = [trace_x];
 
 document.addEventListener('DOMContentLoaded', async () => {
   butConnect.addEventListener('click', clickConnect);
@@ -614,26 +613,6 @@ Plotly.newPlot('plot1', [{
   mode: 'lines',
   line: {color: '#80CAF6'}
 },
-{
-  y: [1,2,3].map(rand),
-  mode: 'lines',
-  line: {color: '#80CAF6'}
-}
+trace_z
 ], layout_xyz, config);
 
-// var cnt = 0;
-
-// var interval = setInterval(function() {
-
-//   // Plotly.extendTraces('plot1', {
-//   //   y: [[orientations[0]]]
-//   // }, [0])
-//   Plotly.extendTraces('plot1', {y:[[orientations[0]], [orientations[1]], [orientations[2]]]}, [0, 1, 2], 300);
-
-//   if(++cnt === 100) 
-//     clearInterval(interval);
-// }, 500);
-
-// Plotly.newPlot('plot1', data_xyz, layout_xyz, config);
-// Plotly.newPlot('myDiv', data_xyz);
-// Plotly.newPlot('plot1', data_xyz);
