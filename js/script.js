@@ -32,6 +32,7 @@ const butClear      = document.getElementById('butClear');
 const baudRate      = document.getElementById('baudRate');
 const autoscroll    = document.getElementById('autoscroll');
 const showTimestamp = document.getElementById('showTimestamp');
+const kalmanFilter = document.getElementById('kalmanfilter');
 const angleType     = document.getElementById('angle_type');
 const lightSS       = document.getElementById('light');
 const darkSS        = document.getElementById('dark');
@@ -120,6 +121,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   butClear.addEventListener('click', clickClear);
   autoscroll.addEventListener('click', clickAutoscroll);
   showTimestamp.addEventListener('click', clickTimestamp);
+  kalmanFilter.addEventListener('click', clickKalmanfilter);
   baudRate.addEventListener('change', changeBaudRate);
   angleType.addEventListener('change', changeAngleType);
   darkMode.addEventListener('click', clickDarkMode);
@@ -240,6 +242,11 @@ async function readLoop() {
 }
 
 function logData(line) {
+  if (kalmanFilter.checked)
+  {
+    console.log('kalman filter is enabled');
+  }
+
   // Update the Log
   if (showTimestamp.checked) {
     let d = new Date();
@@ -337,6 +344,14 @@ async function clickAutoscroll() {
  */
 async function clickTimestamp() {
   saveSetting('timestamp', showTimestamp.checked);
+}
+
+/**
+ * @name clickTimestamp
+ * Change handler for the Show Timestamp checkbox.
+ */
+async function clickKalmanfilter() {
+  saveSetting('kalmanfilter', kalmanFilter.checked);
 }
 
 /**
@@ -454,6 +469,7 @@ function loadAllSettings() {
   // Load all saved settings or defaults
   autoscroll.checked    = loadSetting('autoscroll', true);
   showTimestamp.checked = loadSetting('timestamp', false);
+  kalmanFilter.checked  = loadSetting('kalmanfilter', false);
   baudRate.value        = loadSetting('baudrate', 9600);
   angleType.value       = loadSetting('angletype', 'quaternion');
   darkMode.checked      = loadSetting('darkmode', false);
