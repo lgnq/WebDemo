@@ -604,22 +604,22 @@ function rand() {
   return Math.random();
 }
 
-Plotly.newPlot('plot1', [{
-  y: [1,2,3].map(rand),
-  mode: 'lines',
-  line: {color: '#80CAF6'}
-},
-{
-  y: [1,2,3].map(rand),
-  mode: 'lines',
-  line: {color: '#80CAF6'}
-},
-{
-  y: [1,2,3].map(rand),
-  mode: 'lines',
-  line: {color: '#80CAF6'}
-}
-]);
+// Plotly.newPlot('plot1', [{
+//   y: [1,2,3].map(rand),
+//   mode: 'lines',
+//   line: {color: '#80CAF6'}
+// },
+// {
+//   y: [1,2,3].map(rand),
+//   mode: 'lines',
+//   line: {color: '#80CAF6'}
+// },
+// {
+//   y: [1,2,3].map(rand),
+//   mode: 'lines',
+//   line: {color: '#80CAF6'}
+// }
+// ]);
 
 var cnt = 0;
 
@@ -634,6 +634,6 @@ var interval = setInterval(function() {
     clearInterval(interval);
 }, 500);
 
-// Plotly.newPlot('plot1', data_xyz, layout_xyz, config);
+Plotly.newPlot('plot1', data_xyz, layout_xyz, config);
 // Plotly.newPlot('myDiv', data_xyz);
 // Plotly.newPlot('plot1', data_xyz);
