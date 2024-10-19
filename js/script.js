@@ -54,10 +54,9 @@ const myInput       = document.getElementById('myInput');
 // }
 
 let config = {responsive: true}
-// let config = {responsive: false}
 
 let layout_xyz = {
-  // autosize: true,
+  autosize: true,
   // margin: { t: 5, b: 5, l: 5, r: 5 },
 
   title: 'XYZ Plot',
@@ -101,26 +100,18 @@ let trace_y = {
   }
 };
 
-// let trace_z = {
-//   // type: 'line',
-//   type: 'scattergl',
-//   // x: [0],
-//   y: [0],
-//   mode: 'lines',
-//   name: 'Z',
-//   // line: {
-//   //   // color: 'rgb(55, 128, 191)',
-//   //   width: 1
-//   // }
-// };
-
 let trace_z = {
+  // type: 'line',
   // type: 'scattergl',
+  // x: [0],
   y: [0],
   mode: 'lines',
   name: 'Z',
-  line: {color: '#80CACD', width: 1}
-}
+  line: {
+    // color: 'rgb(55, 128, 191)',
+    width: 1
+  }
+};
 
 let data_xyz = [trace_x, trace_y, trace_z];
 
