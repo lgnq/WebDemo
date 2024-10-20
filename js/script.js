@@ -207,18 +207,15 @@ async function disconnect() {
  * Reads data from the input stream and displays it on screen.
  */
 async function readLoop() {
+  const prefix    = document.getElementById('messageprefixid').value
+  const separator = document.getElementById('messageseparatorid').value
+
   while (true) {
     const {value, done} = await reader.read();
 
     if (value) {
-      let plotdata;
-
-      if (value.substr(0, 1) == "$") {
-        orientations = value.substr(1).trim().split(" ").map(x=>+x);
-      }
-
-      if (value.substr(0, 12) == "Orientation:") {
-        orientations = value.substr(12).trim().split(",").map(x=>+x);
+      if (value.substr(0, 12) == prefix) {
+        orientations = value.substr(12).trim().split(separator).map(x=>+x);
       }
     
       if (value.substr(0, 11) == "Quaternion:") {
