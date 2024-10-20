@@ -29,11 +29,12 @@ const baudRates     = [300, 1200, 2400, 4800, 9600, 19200, 38400, 57600, 74880, 
 const log           = document.getElementById('log');
 const butConnect    = document.getElementById('butConnect');
 const butAddplot    = document.getElementById('butAddplot');
+const butAddtrace   = document.getElementById('butAddtrace');
 const butClear      = document.getElementById('butClear');
 const baudRate      = document.getElementById('baudRate');
 const autoscroll    = document.getElementById('autoscroll');
 const showTimestamp = document.getElementById('showTimestamp');
-const kalmanFilter = document.getElementById('kalmanfilter');
+const kalmanFilter  = document.getElementById('kalmanfilter');
 const angleType     = document.getElementById('angle_type');
 const lightSS       = document.getElementById('light');
 const darkSS        = document.getElementById('dark');
@@ -120,6 +121,7 @@ let data_xyz = [trace_x, trace_y, trace_z];
 document.addEventListener('DOMContentLoaded', async () => {
   butConnect.addEventListener('click', clickConnect);
   butAddplot.addEventListener('click', clickAddplot);
+  butAddtrace.addEventListener('click', clickAddtrace);
   butClear.addEventListener('click', clickClear);
   autoscroll.addEventListener('click', clickAutoscroll);
   showTimestamp.addEventListener('click', clickTimestamp);
@@ -332,10 +334,6 @@ async function clickConnect() {
   toggleUIConnected(true);
 }
 
-/**
- * @name clickAddplot
- * Click handler for the connect/disconnect button.
- */
 async function clickAddplot() {
   const ele    = document.getElementById('chart1');
   const newDiv = document.createElement('div');
@@ -347,6 +345,13 @@ async function clickAddplot() {
   }]);
 
   ele.appendChild(newDiv);
+}
+
+async function clickAddtrace(plot_id, trace_data) {
+  const plot_div = document.getElementById(plot_id);
+
+  // add a single trace to an existing graphDiv
+  Plotly.addTraces(plot_div, {y: trace_data});
 }
 
 /**
