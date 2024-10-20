@@ -336,11 +336,13 @@ async function clickAddplot() {
   const plot_id = document.getElementById('plotid').value;
   const newDiv  = document.createElement('div');
   
+  const trace_data = document.getElementById('tracedataid').value;
+
   newDiv.setAttribute("id", plot_id);
 
   // Generate the Plotly chart
   Plotly.newPlot(newDiv, [{
-    y: [10, 15, 13, 17, 20],
+    y: data_xyz[parseInt(trace_data, 10)],
     // type: 'scatter'
   }], layout_xyz, config);
 
