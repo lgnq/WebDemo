@@ -347,11 +347,13 @@ async function clickAddplot() {
   ele.appendChild(newDiv);
 }
 
-async function clickAddtrace(plot_id, trace_data) {
+async function clickAddtrace() {
+  const plot_id = document.getElementById(plotid).value;
+
   const plot_div = document.getElementById(plot_id);
 
   // add a single trace to an existing graphDiv
-  Plotly.addTraces(plot_div, {y: trace_data});
+  Plotly.addTraces(plot_div, {y: [1, 2, 3]});
 }
 
 /**
