@@ -23,6 +23,8 @@ let orientations = [0, 0, 0];
 let quaternion  = [1, 0, 0, 0];
 let calibration = [0, 0, 0, 0];
 
+let plots = [];
+
 const maxLogLength  = 100;
 const baudRates     = [300, 1200, 2400, 4800, 9600, 19200, 38400, 57600, 74880, 115200, 230400, 250000, 500000, 1000000, 2000000];
 
@@ -142,6 +144,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 
   Plotly.newPlot('plot1', data_xyz, layout_xyz, config);
+  plots.push('plot1');
 
   initBaudRate();
   loadAllSettings();
@@ -232,8 +235,11 @@ async function readLoop() {
       }
     }
 
-    Plotly.extendTraces('plot1', {y:[[orientations[0]], [orientations[1]], [orientations[2]]]}, [0, 1, 2], 300);
-    
+    for (let i = 0; i < plots.length; i++)
+    {
+      Plotly.extendTraces(plots[i], {y:[[orientations[0]], [orientations[1]], [orientations[2]]]}, [0, 1, 2], 300);
+    }
+
     if (done) {
       console.log('[readLoop] DONE', done);
       reader.releaseLock();
@@ -345,6 +351,8 @@ async function clickAddplot() {
     y: data_xyz[parseInt(trace_data, 10)],
     // type: 'scatter'
   }], layout_xyz, config);
+
+  plots.push(plot_id);
 
   ele.appendChild(newDiv);
 }
