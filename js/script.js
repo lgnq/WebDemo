@@ -351,8 +351,7 @@ async function clickAddplot() {
 }
 
 async function clickAddtrace() {
-  const plot_id = document.getElementById('plotid').value;
-
+  const plot_id  = document.getElementById('plotid').value;
   const plot_div = document.getElementById(plot_id);
 
   // add a single trace to an existing graphDiv
