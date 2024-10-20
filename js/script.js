@@ -352,7 +352,7 @@ async function clickAddplot() {
   //   // type: 'scatter'
   // }], layout_xyz, config);
 
-  Plotly.newPlot(newDiv, data_xyz, layout_xyz, config);
+  Plotly.newPlot(plot_id, data_xyz, layout_xyz, config);
 
   plots.push(plot_id);
 
