@@ -351,13 +351,12 @@ async function clickAddplot() {
   //   y: data_xyz[parseInt(trace_data, 10)],
   //   // type: 'scatter'
   // }], layout_xyz, config);
-  ele.appendChild(newDiv);
 
-  Plotly.newPlot(plot_id, data_xyz, layout_xyz, config);
+  Plotly.newPlot(newDiv, data_xyz, layout_xyz, config);
 
   plots.push(plot_id);
 
-  // ele.appendChild(newDiv);
+  ele.appendChild(newDiv);
 }
 
 async function clickAddtrace() {
