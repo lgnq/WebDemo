@@ -335,8 +335,11 @@ async function clickConnect() {
 }
 
 async function clickAddplot() {
-  const ele    = document.getElementById('chart1');
-  const newDiv = document.createElement('div');
+  const ele     = document.getElementById('chart1');
+  const plot_id = document.getElementById('plotid').value;
+  const newDiv  = document.createElement('div');
+  
+  newDiv.setAttribute("id", plot_id);
 
   // Generate the Plotly chart
   Plotly.newPlot(newDiv, [{
