@@ -342,7 +342,7 @@ async function clickAddplot() {
   Plotly.newPlot(newDiv, [{
     y: [10, 15, 13, 17, 20],
     // type: 'scatter'
-  }]);
+  }], layout_xyz, config);
 
   ele.appendChild(newDiv);
 }
