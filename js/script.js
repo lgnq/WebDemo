@@ -347,10 +347,12 @@ async function clickAddplot() {
   newDiv.setAttribute("id", plot_id);
 
   // Generate the Plotly chart
-  Plotly.newPlot(newDiv, [{
-    y: data_xyz[parseInt(trace_data, 10)],
-    // type: 'scatter'
-  }], layout_xyz, config);
+  // Plotly.newPlot(newDiv, [{
+  //   y: data_xyz[parseInt(trace_data, 10)],
+  //   // type: 'scatter'
+  // }], layout_xyz, config);
+
+  Plotly.newPlot(newDiv, data_xyz, layout_xyz, config);
 
   plots.push(plot_id);
 
