@@ -149,12 +149,12 @@ button {
   display: grid;
 }
 
-.animation-container {
+/* .animation-container {
   position: relative;
   height:30vh;
   width: 100%;
   margin: 10px auto;
-}
+} */
 
 .chart-container {
   position: relative;
