@@ -655,23 +655,6 @@ function saveSetting(setting, value) {
 //   await render();
 // }
 
-// function rand() {
-//   return Math.random();
-// }
-
-// Plotly.newPlot('plot1', [{
-//   y: [1,2,3].map(rand),
-//   mode: 'lines',
-//   line: {color: '#80CAF6'}
-// },
-// {
-//   y: [1,2,3].map(rand),
-//   mode: 'lines',
-//   line: {color: '#80CAF6'}
-// },
-// trace_z
-// ], layout_xyz, config);
-
 var j = function(p)
 {
   let width = 400;
