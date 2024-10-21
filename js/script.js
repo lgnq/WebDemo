@@ -25,6 +25,10 @@ let calibration = [0, 0, 0, 0];
 
 let plots = [];
 
+let x = 0;
+let y = 0;
+let z = 0;
+
 let angle_xy = 0;
 let angle_xz = 0;
 let angle_yz = 0;
@@ -242,9 +246,13 @@ async function readLoop() {
       }
     }
 
+    x = orientations[0];
+    y = orientations[1];
+    z = orientations[2];
+
     for (let i = 0; i < plots.length; i++)
     {
-      Plotly.extendTraces(plots[i], {y:[[orientations[0]], [orientations[1]], [orientations[2]]]}, [0, 1, 2], 300);
+      Plotly.extendTraces(plots[i], {y:[[x], [y], [z]]}, [0, 1, 2], 300);
     }
 
     angle_xz = Math.atan2(z, x);
