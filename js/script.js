@@ -219,18 +219,18 @@ async function readLoop() {
         orientations = value.substr(prefix.length).trim().split(separator).map(x=>+x);
       }
     
-      if (value.substr(0, 11) == "Quaternion:") {
-        quaternion = value.substr(11).trim().split(",").map(x=>+x);
-      }
+      // if (value.substr(0, 11) == "Quaternion:") {
+      //   quaternion = value.substr(11).trim().split(",").map(x=>+x);
+      // }
     
-      if (value.substr(0, 12) == "Calibration:") {
-        calibration = value.substr(12).trim().split(",").map(x=>+x);
+      // if (value.substr(0, 12) == "Calibration:") {
+      //   calibration = value.substr(12).trim().split(",").map(x=>+x);
         
-        if (!showCalibration) {
-          showCalibration = true;
-          updateTheme();
-        }
-      }
+      //   if (!showCalibration) {
+      //     showCalibration = true;
+      //     updateTheme();
+      //   }
+      // }
     }
 
     x = orientations[0];
