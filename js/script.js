@@ -317,12 +317,12 @@ function updateTheme() {
     enableStyleSheet(lightSS, true);
   }
 
-  if (showCalibration && !logContainer.classList.contains('show-calibration')) {
-    logContainer.classList.add('show-calibration')
-  } 
-  else if (!showCalibration && logContainer.classList.contains('show-calibration')) {
-    logContainer.classList.remove('show-calibration')
-  }
+  // if (showCalibration && !logContainer.classList.contains('show-calibration')) {
+  //   logContainer.classList.add('show-calibration')
+  // } 
+  // else if (!showCalibration && logContainer.classList.contains('show-calibration')) {
+  //   logContainer.classList.remove('show-calibration')
+  // }
 }
 
 function enableStyleSheet(node, enabled) {
