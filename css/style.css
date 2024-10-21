@@ -149,14 +149,9 @@ button {
   display: grid;
 }
 
-/* .animation-container {
-  position: relative;
-  height:30vh;
-  width: 100%;
-  margin: 10px auto;
-} */
-
 .chart-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   position: relative;
   height:30vh;
   width: 100%;
