@@ -100,12 +100,6 @@ button {
   margin-left: 8px;
 }
 
-.chart-container {
-  position: relative;
-  height: 40vh;
-  margin: 10px auto;
-}
-
 .notSupported {
   padding: 1em;
   margin-top: 1em;
