@@ -36,6 +36,9 @@ let angle_yz = 0;
 let alpha = 0;
 let beta  = 0;
 
+let prefix;
+let separator;
+
 const maxLogLength  = 100;
 const baudRates     = [300, 1200, 2400, 4800, 9600, 19200, 38400, 57600, 74880, 115200, 230400, 250000, 500000, 1000000, 2000000];
 
@@ -168,6 +171,9 @@ async function connect() {
 
   reader = inputStream.getReader();
 
+  prefix    = document.getElementById('messageprefixid').value
+  separator = document.getElementById('messageseparatorid').value
+
   readLoop().catch(async function(error) {
     toggleUIConnected(false);
     await disconnect();
@@ -203,9 +209,6 @@ async function disconnect() {
  * Reads data from the input stream and displays it on screen.
  */
 async function readLoop() {
-  const prefix    = document.getElementById('messageprefixid').value
-  const separator = document.getElementById('messageseparatorid').value
-
   while (true) {
     const {value, done} = await reader.read();
 
