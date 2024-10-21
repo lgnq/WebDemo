@@ -215,8 +215,8 @@ async function readLoop() {
     const {value, done} = await reader.read();
 
     if (value) {
-      if (value.substr(0, 12) == prefix) {
-        orientations = value.substr(12).trim().split(separator).map(x=>+x);
+      if (value.substr(0, prefix.length) == prefix) {
+        orientations = value.substr(prefix.length).trim().split(separator).map(x=>+x);
       }
     
       if (value.substr(0, 11) == "Quaternion:") {
