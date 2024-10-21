@@ -174,6 +174,8 @@ async function connect() {
   prefix    = document.getElementById('messageprefixid').value
   separator = document.getElementById('messageseparatorid').value
 
+  console.log(prefix);
+
   readLoop().catch(async function(error) {
     toggleUIConnected(false);
     await disconnect();
