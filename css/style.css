@@ -111,9 +111,9 @@ button {
   align-items: center;
 }
 
-/* .log {
+.log {
   height: calc(50vh - 120px);
-  width: 100vw;
+  /* width: 100vw; */
   font-family:Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New, monospace;
   font-size: 0.8em;
   border-width: 1px;
@@ -121,33 +121,14 @@ button {
   overflow-x: hidden;
   overflow-x: auto;
   transition : color 0.1s linear;
-} */
-
-.show-calibration .log {
-  width: 70vw ;
-}
-
-.calibration-container {
-  display: none;
-  position: relative;
-  width: calc(30vw - 10px);
-  height: calc(50vh - 120px);
-  margin-left: 10px;
-  border-width: 1px;
-  border-style: solid;
-  align-items: center;
-  justify-content: center;
-}
-
-.show-calibration .calibration-container {
-  display: grid;
 }
 
 .chart-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   position: relative;
-  height:30vh;
+  height:40vh;
   width: 100%;
   margin: 10px auto;
+  gap: 10px;
 }
