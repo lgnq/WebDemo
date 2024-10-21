@@ -681,12 +681,10 @@ var j = function(p)
 
   p.setup = function() 
   {
-    var h = parent.innerHeight - 52 - 453 - 120 - 20 - 3;
+    // var h = parent.innerHeight - 52 - 453 - 120 - 20 - 3;
 
-    // Use degrees.
-    // p.angleMode(p.DEGREES);
-
-    p.createCanvas(420, h, p.WEBGL);
+    // p.createCanvas(420, h, p.WEBGL);
+    p.createCanvas(p.WEBGL);
   }
 
   p.draw = function() 
