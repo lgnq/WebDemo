@@ -664,10 +664,11 @@ var j = function(p)
 
   p.setup = function() 
   {
-    // var h = parent.innerHeight - 52 - 453 - 120 - 20 - 3;
+    var h = parent.innerHeight/2 - 120;
+    var w = (parent.innerWidth - 80) / 3;
 
     // p.createCanvas(420, h, p.WEBGL);
-    p.createCanvas(400, 400, p.WEBGL);
+    p.createCanvas(w, 400, p.WEBGL);
   }
 
   p.draw = function() 
