@@ -25,6 +25,13 @@ let calibration = [0, 0, 0, 0];
 
 let plots = [];
 
+let angle_xy = 0;
+let angle_xz = 0;
+let angle_yz = 0;
+
+let alpha = 0;
+let beta  = 0;
+
 const maxLogLength  = 100;
 const baudRates     = [300, 1200, 2400, 4800, 9600, 19200, 38400, 57600, 74880, 115200, 230400, 250000, 500000, 1000000, 2000000];
 
@@ -239,6 +246,23 @@ async function readLoop() {
     {
       Plotly.extendTraces(plots[i], {y:[[orientations[0]], [orientations[1]], [orientations[2]]]}, [0, 1, 2], 300);
     }
+
+    angle_xz = Math.atan2(z, x);
+
+    if (angle_xz < 0)
+      angle_xz += 2*Math.PI;
+  
+    angle_xz = (angle_xz / Math.PI) * 180;  
+    
+    angle_yz = Math.atan2(z, y);
+
+    if (angle_yz < 0)
+      angle_yz += 2*Math.PI;
+  
+    angle_yz = (angle_yz / Math.PI) * 180;   
+    
+    alpha = angle_xz.toFixed(3);
+    beta  = angle_yz.toFixed(3);
 
     if (done) {
       console.log('[readLoop] DONE', done);
@@ -668,3 +692,46 @@ function saveSetting(setting, value) {
 // trace_z
 // ], layout_xyz, config);
 
+var j = function(p)
+{
+  let width = 400;
+
+  /** The maximum stick deflection angle, in radians */
+  const MAX_DEFLECT = Math.PI / 8;
+
+  p.setup = function() 
+  {
+    var h = parent.innerHeight - 52 - 453 - 120 - 20 - 3;
+
+    // Use degrees.
+    // p.angleMode(p.DEGREES);
+
+    p.createCanvas(420, h, p.WEBGL);
+  }
+
+  p.draw = function() 
+  {
+    const stickLen = width * 0.3;
+
+    p.background(0xFF, 0xFF, 0xFF);
+
+    p.ambientLight(128);
+    p.directionalLight(200, 200, 200, 100, 150, -1);  // A white light from behind the viewer
+    p.ambientMaterial(192);
+
+    p.sphere(60);
+
+    p.rotateX(-Math.PI / 2);
+
+    p.rotateX(p.map(beta-90, -25, 25, -MAX_DEFLECT, MAX_DEFLECT));
+    p.rotateZ(p.map(alpha-90, -25, 25, -MAX_DEFLECT, MAX_DEFLECT));
+
+    // rotateY(map(mouseXRatio(), -1, 1, -MAX_DEFLECT, MAX_DEFLECT));
+
+    p.translate(0, -stickLen / 2, 0);
+    p.noStroke();
+
+    p.cylinder(stickLen / 7, stickLen);
+  }
+}
+var myp5 = new p5(j, 'canvas')
