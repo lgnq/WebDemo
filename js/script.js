@@ -684,7 +684,7 @@ var j = function(p)
     // var h = parent.innerHeight - 52 - 453 - 120 - 20 - 3;
 
     // p.createCanvas(420, h, p.WEBGL);
-    p.createCanvas(p.WEBGL);
+    p.createCanvas(400, 400, p.WEBGL);
   }
 
   p.draw = function() 

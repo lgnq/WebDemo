@@ -111,7 +111,7 @@ button {
   align-items: center;
 }
 
-.log {
+/* .log {
   height: calc(50vh - 120px);
   width: 100vw;
   font-family:Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New, monospace;
@@ -121,7 +121,7 @@ button {
   overflow-x: hidden;
   overflow-x: auto;
   transition : color 0.1s linear;
-}
+} */
 
 .show-calibration .log {
   width: 70vw ;
