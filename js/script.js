@@ -734,4 +734,4 @@ var j = function(p)
     p.cylinder(stickLen / 7, stickLen);
   }
 }
-var myp5 = new p5(j, 'canvas')
+var myp5 = new p5(j, 'joystick')
