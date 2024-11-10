@@ -251,8 +251,6 @@ async function readLoop() {
       trace_y.y.pop();
     if (trace_z.y.length > size)
       trace_z.y.pop();
-    if (trace_s.y.length > size)
-      trace_s.y.pop();    
 
     angle_xz = Math.atan2(z, x);
 
