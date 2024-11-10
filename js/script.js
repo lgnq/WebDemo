@@ -29,6 +29,9 @@ let x = 0;
 let y = 0;
 let z = 0;
 
+let size = 300;
+let freq = 10;
+
 let angle_xy = 0;
 let angle_xz = 0;
 let angle_yz = 0;
@@ -241,6 +244,15 @@ async function readLoop() {
     {
       Plotly.extendTraces(plots[i], {y:[[x], [y], [z]]}, [0, 1, 2], 300);
     }
+
+    if (trace_x.y.length > size)
+      trace_x.y.pop();
+    if (trace_y.y.length > size)
+      trace_y.y.pop();
+    if (trace_z.y.length > size)
+      trace_z.y.pop();
+    if (trace_s.y.length > size)
+      trace_s.y.pop();    
 
     angle_xz = Math.atan2(z, x);
 
