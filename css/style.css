@@ -120,9 +120,9 @@ button {
   transition : color 0.1s linear;
 }
 
-.chart-container {
+.grid-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   position: relative;
   height:40vh;
   width: 100%;

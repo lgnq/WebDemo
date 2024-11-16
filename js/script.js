@@ -347,7 +347,7 @@ async function clickConnect() {
 }
 
 async function clickAddplot() {
-  const ele     = document.getElementById('chart1');
+  const ele     = document.getElementById('charts');
   const plot_id = document.getElementById('plotid').value;
   const newDiv  = document.createElement('div');
   
