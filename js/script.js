@@ -221,19 +221,6 @@ async function readLoop() {
       if (value.substr(0, prefix.length) == prefix) {
         orientations = value.substr(prefix.length).trim().split(separator).map(x=>+x);
       }
-    
-      // if (value.substr(0, 11) == "Quaternion:") {
-      //   quaternion = value.substr(11).trim().split(",").map(x=>+x);
-      // }
-    
-      // if (value.substr(0, 12) == "Calibration:") {
-      //   calibration = value.substr(12).trim().split(",").map(x=>+x);
-        
-      //   if (!showCalibration) {
-      //     showCalibration = true;
-      //     updateTheme();
-      //   }
-      // }
     }
 
     x = orientations[0];
@@ -326,13 +313,6 @@ function updateTheme() {
   else {
     enableStyleSheet(lightSS, true);
   }
-
-  // if (showCalibration && !logContainer.classList.contains('show-calibration')) {
-  //   logContainer.classList.add('show-calibration')
-  // } 
-  // else if (!showCalibration && logContainer.classList.contains('show-calibration')) {
-  //   logContainer.classList.remove('show-calibration')
-  // }
 }
 
 function enableStyleSheet(node, enabled) {

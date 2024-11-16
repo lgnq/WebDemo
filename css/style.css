@@ -94,6 +94,8 @@ button {
 .controls {
   height: 40px;
   line-height: 40px;
+
+  background-color: white;
 }
 
 .controls span {
@@ -106,18 +108,13 @@ button {
   margin-bottom: 1em;
 }
 
-.row {
-  display: flex;
-  align-items: center;
-}
-
 .log {
   height: calc(50vh - 120px);
   /* width: 100vw; */
   font-family:Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New, monospace;
   font-size: 0.8em;
-  border-width: 1px;
-  border-style: solid;
+  /* border-width: 1px; */
+  /* border-style: solid; */
   overflow-x: hidden;
   overflow-x: auto;
   transition : color 0.1s linear;
