@@ -123,8 +123,10 @@ button {
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+
   position: relative;
-  height:40vh;
+  height:100vh;
   width: 100%;
   margin: 10px auto;
   gap: 10px;
