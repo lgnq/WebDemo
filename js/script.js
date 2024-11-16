@@ -14,11 +14,9 @@ let inputDone;
 let outputDone;
 let inputStream;
 let outputStream;
-let showCalibration = false;
 
 let orientations = [0, 0, 0];
 let quaternion  = [1, 0, 0, 0];
-let calibration = [0, 0, 0, 0];
 
 let plots = [];
 
@@ -55,7 +53,6 @@ const angleType     = document.getElementById('angle_type');
 const lightSS       = document.getElementById('light');
 const darkSS        = document.getElementById('dark');
 const darkMode      = document.getElementById('darkmode');
-const calContainer  = document.getElementById('calibration');
 const logContainer  = document.getElementById("log-container");
 const myInput       = document.getElementById('myInput');
 
@@ -203,7 +200,6 @@ async function disconnect() {
 
   await port.close();
   port = null;
-  showCalibration = false;
 }
 
 /**
@@ -526,29 +522,6 @@ function loadSetting(setting, defaultValue) {
   }
 
   return value;
-}
-
-function updateCalibration() {
-  // Update the Calibration Container with the values from calibration
-  const calMap = [
-    {caption: "Uncalibrated",         color: "#CC0000"},
-    {caption: "Partially Calibrated", color: "#FF6600"},
-    {caption: "Mostly Calibrated",    color: "#FFCC00"},
-    {caption: "Fully Calibrated",     color: "#009900"},
-  ];
-  
-  const calLabels = [
-    "System", "Gyro", "Accelerometer", "Magnetometer"
-  ]
-
-  calContainer.innerHTML = "";
-  for (var i = 0; i < calibration.length; i++) {
-    let calInfo = calMap[calibration[i]];
-    let element = document.createElement("div");
-    element.innerHTML = calLabels[i] + ": " + calInfo.caption;
-    element.style = "color: " + calInfo.color;
-    calContainer.appendChild(element);
-  }
 }
 
 function saveSetting(setting, value) {
